@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -23,12 +24,17 @@ public class CheckboxesTest {
     public void CheckboxesElements() {
         driver.get("https://the-internet.herokuapp.com/");
         driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[6]/a")).click();
-        driver.findElement(By.cssSelector("[type=checkbox]")).isSelected();
+        WebElement checkbox1 = driver.findElement(By.cssSelector("[type=checkbox]"));
+        System.out.println("The checkbox is selection state is - " + checkbox1.isSelected());
         driver.findElement(By.cssSelector("[type=checkbox]")).click();
         driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[1]")).isSelected();
-        driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]")).isSelected();
+        checkbox1 = driver.findElement(By.cssSelector("[type=checkbox]"));
+        System.out.println("The checkbox is selection state is - " + checkbox1.isSelected());
+        WebElement checkbox2 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]"));
+        System.out.println("The checkbox is selection state is - " + checkbox2.isSelected());
         driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]")).click();
-        driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]")).isSelected();
+        checkbox2 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]"));
+        System.out.println("The checkbox is selection state is - " + checkbox2.isSelected());
     }
         @AfterMethod
         public void tearDown() {
