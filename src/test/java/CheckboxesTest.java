@@ -38,6 +38,6 @@ public class CheckboxesTest {
     }
         @AfterMethod
         public void tearDown() {
-            driver.quit();
+//            driver.quit();
         }
     }

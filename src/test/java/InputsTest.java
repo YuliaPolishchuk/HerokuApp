@@ -41,6 +41,6 @@ public class InputsTest {
 
     @AfterMethod
     public void tearDown() {
-            driver.quit();
+        driver.quit();
     }
 }
